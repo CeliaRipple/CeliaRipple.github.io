@@ -5,6 +5,6 @@ The user should consider their polygon shapefile to be featureinput2 in this mod
 Then the model will find the centroids of all the polygons in the featureinput2 layer and calculate their distances and direction from the citycenter layer. 
 An added feature allows the user to create original names for output fields.
 The example linked below is an example of the model used on census tracts in Milwaukee county. 
-Here you will find a link to to the model: [lab1model](Distance_from_point.model3)
+Here you will find a link to to the model: [lab1model](Distance_from_point.model3m.model3)
 Here you will find a visual of the from the case study described visualized in a scatter plot where Median Gross Rent is graphed in relation to direction from the city center: [scatterplot](ScatterPlotRentvsDirection.html)
 Here you will find the same results visualized in a polar plot:[polarplot](PolarPlotRentvsDirection.html)
