@@ -7,5 +7,5 @@ Then the model will find the centroids of all the polygons in the featureinput2 
 An added feature allows the user to create original names for output fields.
 The link is an example of the model used on census tracts in Milwaukee county to find the direction in degrees of census tracts from the city center [MapDirectionFromCityCenter](Direction From City Center Milwaukee Metropolitan.png)  
 Here you will find a link to to the model: [lab1model](Distance_from_point.model3m.model3)
-Here you will find a visual of the from the case study described visualized in a scatter plot where Median Gross Rent is graphed in relation to direction from the city center: [scatterplot](PolarPlotRentvsDirection.html)
+Here you will find a visual of the from the case study described visualized in a scatter plot where Median Gross Rent is graphed in relation to direction from the city center: [scatterplot](ScatterPlotRentvsDistance.html)
 Here you will find the same results visualized in a polar plot:[polarplot](PolarPlotRentvsDirection.html)
