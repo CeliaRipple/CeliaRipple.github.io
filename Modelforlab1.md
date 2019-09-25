@@ -1,5 +1,5 @@
 Distance from point model:
-[Image of model](Imageofpointdistancemodel.png.md)
+[Image of model](Imageofpointdistancemodel.md)
 this model allows the user to find the directions and the distances of polygons on a shape file from a point either on a separate layer or created via the centroid function.
 Image of Model
 The user should consider their polygon shapefile to be featureinput2 in this model. City center should be a coordinate point on a separate layer, or can be created by selecting polygons on the shapefile. The Model will find the centroids of the selected polygons then average their centers to create one coordinate point. 
