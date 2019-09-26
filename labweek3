@@ -1,5 +1,5 @@
 This is a visualization of the steps for week 3 lab
 step 1: 
-after importing the DEMs into the saga they will look like this [Demsnotmosaiced]
+after importing the DEMs into the saga they will look like this [Demsnotmosaiced](DEMfilesASTER.png)
 The DEMs need to be mosaiced together to create one seemless DEM. The Mosaicking tool lives under Grid> gridding> Mosaicking
 After the DEMS have been mosaicked they will look like this [DEMSmosaic]
