@@ -18,4 +18,8 @@ Step 5:
 Next we can remove the sinks using the previous layer we just created so that the sinks won't cause errors in analysis later on. 
 To remove the sinks go to the Terrain Analysis tab under the tools then to preprocessing and to sink removal. 
 Use the Mosaic created before as the DEM and the sink Route layer made in the previous step as the Sink Route. 
-Create the preprocessed DEM. It will look like this [no sinks](
+Create the preprocessed DEM. It will look like this [no sinks](nosinksASTER.png)
+Step 6: 
+Next to calcualte Flow accumulation go to terrain analysis under tools then to hydrology then to flow accumulation (top- Down)
+Use the Sink filled DEM for the elevation. and the sink routes made in step 4 for the Sink Routes. 
+Create the Flow accumulation layer and it will look like this [Flow Accumulation](
