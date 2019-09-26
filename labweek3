@@ -10,4 +10,7 @@ The >>source is now the layer that was created from the DEMs that we mosaicked t
 execute this step. Now the layers will be in World Mercator. 
 Step 3: 
 Next to create a hillshade, go to the tools and under the Terrain Analysis tab go to Lighting, visibility then to Analytical 
-Hillshading. The output will look like this [Hillshade](
+Hillshading. The output will look like this [Hillshade](hillshadeASTER.png)
+Step 4: 
+to detect the sinks in the elevation model go to the Terrain analysis tab under tools then to preprocessing then 
+to Sink Drainage Route Dectection. The output will look like this [Detect Sinks](
