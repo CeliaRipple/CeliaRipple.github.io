@@ -57,7 +57,8 @@ mosaicked and reprojected map of the number file. The number file has a code tha
 was drawn from in the procress of creating the elevation data.  Using this number file the user can evaluate the prevalance of 
 uncertainty and what sources were used to fill those gaps. 
 
-Once the user has the number file, they can reclassify it to show each source. an example of whoks like for the ASTER data can seen here 
+Once the user has the number file, they can reclassify it to show each source. an example of what it looks like for the ASTER data can seen here 
 [ASTER data classifications](classifedASTERNUMfile.png)
 a legend to interpret that can be found here[legend](classifedASTERNUMfile_legend.png)
 
+One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3. 
