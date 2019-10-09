@@ -44,7 +44,7 @@ Lab4
 For lab 4, we looked at the same study area, but used a batch procress to run data to do hydrological analysis. We then used this batch 
 process to run data from ASTER as we did in the first lab and SRTM data collected by NASA at 1 arc second on the same area of mnt. 
 Kilimanjaro. 
-The batch process for the hydrological anaylsis of ASTER data looks like this [ASTER Batch Process]()
+The batch process for the hydrological anaylsis of ASTER data looks like this [ASTER Batch Process](mosaic_utmproj_hillshade_sinks_sinkremoval_flowaccumulation_Channelnetworks.bat)
 The batch process for the same analysis with SRTM data looks like this [SRTM Batch Process]()
 Notice that the only difference between the two models are the prefix names and the file locations of the data. 
 
