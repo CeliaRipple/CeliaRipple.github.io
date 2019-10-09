@@ -37,3 +37,6 @@ The final step is to create the channel networks to determine where there are st
 Go to the terrain anaylsis under tools and to channels then to channel network. 
 Again use the sink filled DEM for the elevation. Create the Channel network, the Channel Route, and the Channel Naetwork (shapes)
 When you crteate this layer it will look like this. ![Channel Networks](channelnetworkASTER.png)
+
+
+##Lab4 
