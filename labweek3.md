@@ -58,6 +58,6 @@ was drawn from in the procress of creating the elevation data.  Using this numbe
 uncertainty and what sources were used to fill those gaps. 
 
 Once the user has the number file, they can reclassify it to show each source. an example of whoks like for the ASTER data can seen here 
-[ASTER data classifications]()
+[ASTER data classifications](classifedASTERNUMfile.png)
 a legend to interpret that can be found here[legend]()
 
