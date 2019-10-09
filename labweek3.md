@@ -48,3 +48,7 @@ The batch process for the hydrological anaylsis of ASTER data looks like this [A
 The batch process for the same analysis with SRTM data looks like this [SRTM Batch Process](Mosaic_UTMproj_hillshade_sinks_sinkremoval_flowAcc_Channels_SRTM.bat)
 Notice that the only difference between the two models are the prefix names and the file locations of the data. 
 
+Batch processes allow the user to run multiple data sets through the same anaylsis without having to run each tool individually in SAGA. 
+This was useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our hydrological 
+analysis. 
+
