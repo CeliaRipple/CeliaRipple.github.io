@@ -5,7 +5,7 @@ Download and import 2 DEM tiles of ASTER data collected by NASA and the Japanese
 
 The DEMs need to be mosaiced together to create one seemless DEM. The Mosaicking tool lives under Grid> gridding> Mosaicking
 Use the Nearest Neighbor parameter to execute the tool.
-After the DEMS have been mosaicked they will look like this ![DEMSmosaic](MosaicmapASTER.png)
+After the DEMS have been mosaicked they will look like this ![DEMSmosaic]()
 
 Step 2:
 The DEMs are now mosaicked together, but they are in WGS84. We need to reproject into World Mercator.
