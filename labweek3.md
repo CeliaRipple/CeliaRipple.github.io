@@ -52,3 +52,12 @@ Batch processes allow the user to run multiple data sets through the same anayls
 This was useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our hydrological 
 analysis. 
 
+The user can also run Number files for the study area through the first two steps of the batch procress so that the user will have a 
+mosaicked and reprojected map of the number file. The number file has a code that allows the user to see where the data for each cell 
+was drawn from in the procress of creating the elevation data.  Using this number file the user can evaluate the prevalance of 
+uncertainty and what sources were used to fill those gaps. 
+
+Once the user has the number file, they can reclassify it to show each source. an example of whoks like for the ASTER data can seen here 
+[ASTER data classifications]()
+a legend to interpret that can be found here[legend]()
+
