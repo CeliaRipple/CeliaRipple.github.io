@@ -59,5 +59,5 @@ uncertainty and what sources were used to fill those gaps.
 
 Once the user has the number file, they can reclassify it to show each source. an example of whoks like for the ASTER data can seen here 
 [ASTER data classifications](classifedASTERNUMfile.png)
-a legend to interpret that can be found here[legend]()
+a legend to interpret that can be found here[legend](classifedASTERNUMfile_legend.png)
 
