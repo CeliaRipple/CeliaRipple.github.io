@@ -78,3 +78,6 @@ The same tool can be used to run an anaylsis on outputs of flow accumulation fro
 Here are the results of ASTER flow accummulation minus SRTM flow accummulation ![Flow difference](diffflowaccASTERminusSRTM.png)
 ![legend](diffflowaccASTERminusSRTM_legend.png) 
 
+As this anaylsis shows, there are differences in the flow accummulation depending on the data source used. While it looks more dramatic 
+in the DEM data. the flow accummulation difference results show that there will be differences in the final results that can affect 
+decision making if these outputs are used for real analysis.
