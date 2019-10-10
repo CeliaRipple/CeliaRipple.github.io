@@ -48,9 +48,14 @@ The batch process for the hydrological anaylsis of ASTER data looks like this [A
 The batch process for the same analysis with SRTM data looks like this [SRTM Batch Process](Mosaic_UTMproj_hillshade_sinks_sinkremoval_flowAcc_Channels_SRTM.bat)
 Notice that the only difference between the two models are the prefix names and the file locations of the data. 
 
-Batch processes allow the user to run multiple data sets through the same anaylsis without having to run each tool individually in SAGA. 
-This was useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our hydrological 
-analysis. 
+Batch processes allow the user to run multiple data sets through the same anaylsis without having to run each tool individually in SAGA.
+The user can compare the outputs of two different data sets side by side. Here is a side by side comparison of the channel networks outputs for SRTM and ASTER. 
+
+![Channel Networks ASTER](channelnetworkASTER.png) 
+![Channel Networks SRTM](batch2channelnetwork.png)
+
+Batch processes were useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our 
+hydrological analysis. 
 
 The user can also run Number files for the study area through the first two steps of the batch procress so that the user will have a 
 mosaicked and reprojected map of the number file. The number file has a code that allows the user to see where the data for each cell 
@@ -58,9 +63,14 @@ was drawn from in the procress of creating the elevation data.  Using this numbe
 uncertainty and what sources were used to fill those gaps. 
 
 Once the user has the number file, they can reclassify it to show each source. an example of what it looks like for the ASTER data can seen here 
-[ASTER data classifications](ASTERNUMfile.png)
-a legend to interpret that can be found here[legend](ASTERNUMfile_legend.png)
+![ASTER data classifications](ASTERNUMfile.png)
+a legend to interpret that can be found here ![legend](ASTERNUMfile_legend.png)
 
 One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3.
 
-To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this [DEM Difference]() 
+To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DiffMosaicASTERminusSRTM.png) [Legend](DiffMosaicASTERminusSRTM_legend.png) Areas in darker red and darker blue indicate higher areas of difference. 
+
+The same tool can be used to run an anaylsis on outputs of flow accumulation from the SRTM and ASTER data. 
+Here are the results of ASTER flow accummulation minus SRTM flow accummulation ![Flow difference](diffflowaccASTERminusSRTM.png)
+![legend](diffflowaccASTERminusSRTM_legend.png) 
+
