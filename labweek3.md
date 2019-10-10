@@ -52,7 +52,7 @@ Batch processes allow the user to run multiple data sets through the same anayls
 The user can compare the outputs of two different data sets side by side. Here is a side by side comparison of the channel networks outputs for SRTM and ASTER. 
 
 ![Channel Networks ASTER](channelnetworkASTER.png) 
-![Channel Networks SRTM](batch2channelnetwork.png)
+![Channel Networks SRTM](Batch2realSRTMchannelntwrk.png)
 
 Batch processes were useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our 
 hydrological analysis. 
@@ -68,7 +68,7 @@ a legend to interpret that can be found here ![legend](ASTERNUMfile_legend.png)
 
 One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3.
 
-To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DiffMosaicASTERminusSRTM.png) [Legend](DiffMosaicASTERminusSRTM_legend.png) Areas in darker red and darker blue indicate higher areas of difference. 
+To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DiffMosaicASTERminusSRTM.png) ![Legend](DiffMosaicASTERminusSRTM_legend.png) Areas in darker red and darker blue indicate higher areas of difference. 
 
 The same tool can be used to run an anaylsis on outputs of flow accumulation from the SRTM and ASTER data. 
 Here are the results of ASTER flow accummulation minus SRTM flow accummulation ![Flow difference](diffflowaccASTERminusSRTM.png)
