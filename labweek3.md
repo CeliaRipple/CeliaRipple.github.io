@@ -61,4 +61,6 @@ Once the user has the number file, they can reclassify it to show each source. a
 [ASTER data classifications](ASTERNUMfile.png)
 a legend to interpret that can be found here[legend](ASTERNUMfile_legend.png)
 
-One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3. 
+One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3.
+
+To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this [DEM Difference]() 
