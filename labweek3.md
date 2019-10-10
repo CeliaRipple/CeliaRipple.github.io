@@ -51,7 +51,7 @@ Notice that the only difference between the two models are the prefix names and 
 Batch processes allow the user to run multiple data sets through the same anaylsis without having to run each tool individually in SAGA.
 The user can compare the outputs of two different data sets side by side. Here is a side by side comparison of the channel networks outputs for SRTM and ASTER. 
 
-![Channel Networks ASTER](channelnetworkASTER.png) 
+![Channel Networks ASTER](Batch1ASTERChannelntwrk.png)
 ![Channel Networks SRTM](Batch2realSRTMchannelntwrk.png)
 
 Batch processes were useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our 
