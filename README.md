@@ -8,4 +8,4 @@ dicussion of Open Source [link](Discussion_of_Open_Source.md)
 
 Lab week 3[link](labweek3.md)
 
-PostGIS lab(postgresSQLlab.md)
+[PostGIS lab](postgresSQLlab.md)
