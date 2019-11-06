@@ -12,4 +12,5 @@ Our final drain density map with the wetlands extent can be found here:
 [Drain Density Map](qgis2web_2019_10_24-16_05_38_137842/index.html)
 
 An explanation of our process:
-to find the density of drains 
+to find the density of drains it was necessary to asign a subward to each drain point based on the 
+location. To do this we must add a column to the drains layer 
