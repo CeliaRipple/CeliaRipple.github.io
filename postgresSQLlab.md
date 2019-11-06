@@ -115,6 +115,7 @@ or wetland is not null
 in our final map the wetland layer is placed over the subward density layer so that the viewer can analyze whether the subwards with 
 the highest density are in fact in the wetland area.  
 
+here is a link to look at all the sql functions we used from start to finish [SQl](noteslab5.sql)
 
 
 
