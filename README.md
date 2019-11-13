@@ -1,11 +1,11 @@
 Hi I'm Celia
 
-First Assignment blog post [link](blogpost)
+[First Assignment blog post](blogpost)
 
-First lab assignment [link](Modelforlab1.md)
+[First lab assignment](Modelforlab1.md)
 
-dicussion of Open Source [link](Discussion_of_Open_Source.md)
+[dicussion of Open Source](Discussion_of_Open_Source.md)
 
-Lab week 3[link](labweek3.md)
+[Lab week 3](labweek3.md)
 
 [PostGIS lab](postgresSQLlab.md)
