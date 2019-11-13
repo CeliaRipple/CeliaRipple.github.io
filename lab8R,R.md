@@ -15,3 +15,13 @@ level. We were able to gain access to this data and used in our reproduction of 
 access to data because in addition to using the DHS surveys, Malcomb et al. used FEWSNET 2005 data to determine livlihood sensitivity 
 which we did not have access to. FEWSNET 2005 data accounted for 20% of the final vulnerability anaylsis, so even if we did 
 everything else that Malcomb et al. did, our results will only ever be 80% complete. 
+
+Using the data that we had we ran through an analysis of the data based on the medthods section of the Malcomb et al. paper. 
+Malcomb et al. assigned a vulnerability score from 1-5 to each household based on the vulnerability indicators chosen for 
+the study. The indicators from the DHS data was categorized uder adaptive capacity which was further broken down into assests, 
+access. Malcomb et al. determined that assests and access factors each contributed 20% to the over all vulnerability (40% together). 
+20% of the vulnerability was attributed to livelihood sensitivity (FEWSNET data) that we did not have access to. And the final
+40% was attributed to physical exposure which was subdivided into "Estimated Risk for Flood Hazard" and "Exposition to Drought Events"
+Each of which were given 20% contribution to vulnerability. The data for the phyiscal exposure came from the UNEP Global Risk Data
+Platform (GRID). We also downloaded this data for our anaylsis.  
+
