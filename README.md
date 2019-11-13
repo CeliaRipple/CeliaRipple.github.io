@@ -10,4 +10,4 @@ Hi I'm Celia
 
 [PostGIS lab](postgresSQLlab.md)
 
-[Lab 8]
+[Lab 8](lab8R,R.md)
