@@ -9,3 +9,5 @@ Hi I'm Celia
 [Lab week 3](labweek3.md)
 
 [PostGIS lab](postgresSQLlab.md)
+
+[Lab 8]
