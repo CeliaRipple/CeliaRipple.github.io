@@ -29,17 +29,24 @@ Each of which were given 20% contribution to vulnerability. The data for the phy
 Platform (GRID). We also downloaded this data for our anaylsis. 
 
 Our first step in reproducing Malcomb et al.'s findings was to assign a vulnerability score (1-5) to each household for each
-indicator in the adaptability analysis. As a class we wrote out SQL queries in PostGIS.
+indicator in the adaptability analysis. We used the ntile function to do this, but ntile cannot account for indicators that 
+were given the same score, so scores needed to be converted first to a percent rank because percent rank allows ntile to 
+account for ties in the indicator scores. 
 Here is an example of an SQL query that demonstrates converting the survey entries from the number of
 sick people per household into a vulnerabilty score:
 
 Step 1: add a column 
 ALTER TABLE dhshh ADD COLUMN sick REAL;
-Step 2: udpate table 
+Step 2: udpate table to make scores a percent rank  
 UPDATE dhshh set sick=pctr from
 (SELECT hhid as shhid, percent_rank() OVER(ORDER BY hv248 desc) * 4 + 1 as pctr FROM dhshh ) as subq
 where hhid=shhid;
-
+Step 3: give score 1-5 with ntile function 
+SELECT hhid, ta_id,
+NTILE(5) OVER(
+	ORDER BY hv248
+) AS num_sick,
+ 
 An important thing to note: some indicators need to be assigned scores in order descending because a higher number indicates 
 a more vulnerable state. In the case of sick people per household, sickness indicates more vulnerability. 
 More sick people = lower score. In other cases, such as livestock per household where more livestock means more adaptability 
@@ -51,5 +58,6 @@ for converting true/false answers into a 1-5 score. In our anaylsis we decided t
 value of 1, but we are aware that this distorts our results by limiting these indicators to being either extremely good or 
 extremely bad. 
 
-Next 
-[model](lab8model.png)
+Next indicator scores were multiplied by their weights and summed to give a score for each household. 
+Going into the next lab, Joe Holler provided this model for the following analysis
+[vulnerabilitymodel](lab8model.png)
