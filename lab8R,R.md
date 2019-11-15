@@ -59,5 +59,20 @@ value of 1, but we are aware that this distorts our results by limiting these in
 extremely bad. 
 
 Next indicator scores were multiplied by their weights and summed to give a score for each household. 
-Going into the next lab, Joe Holler provided this model for the following analysis
+Going into the next lab, Professor Holler provided this model for the following analysis
 [vulnerabilitymodel](lab8model.png)
+This model went through the steps of (1) extracting the vulnerability scores from the "CapacityValue" and making it into the 
+"capacity" layer. (2) giving our map an extent by clipping "capacity" to the extent of the "livelihoodZones" layer. 
+"livelihoodZones" is the extent of Malawi's political boundaries minus the lake that borders the 
+country. (3) Rasterize the "flood", "drought" and "capacity" layers so that we can work with them as raster data. "flood" and 
+"drought" layers were downloaded from the GRID UNEP site https://preview.grid.unep.ch/index.php?preview=data&lang=eng
+(4) drought and flood layers were masked to the "Capacity Grid" so that there will be no data in these layer for cells in 
+which there is no data on the capacity layer. 
+Next we added functions to the original model to give the "floodclip" and the "droughtclip" layers scores from 1-5 based the 
+severvity of their inputs. For "droughtclip" we added r.quantile that gives its output in html file form which we saved as a 
+txt file then used in the r.rcode function with the drought to create classifed layers. This is the output of that function 
+layed over the Livelihoodzones layer to contextualize the extent of Malawi: [drought](drought.png) 
+the "floodclip" layer already has only 5 classifications after rasterization but the range is 0-4. To make this layer 
+consistant with the drought and capacity layers we used a raster calculator: "floodclip" + 1 and to shift the range to 1-5. 
+Finally we used a raster calculator to weight and add together the scores of the capacity and flood and drought layers. 
+
