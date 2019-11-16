@@ -92,7 +92,14 @@ This issue with the cell size could have been easily avoided if Malcomb et al. h
 publication. 
 
 Finally, Malcomb et al. did not include a discussion of error in thier write up, however there was a large source of error in 
-in their 
+in their analysis. To protect the privacy of participants in the survey a buffer was placed around each survey 
+point- a 5km radius for each point in a rural area and a 2km radius for each in an urban area. Then the survey point was 
+randomly placed in that buffer zone so that the exact location of the survey was obscured. The source of error came in that 
+Malcomb et al. analyzed vulnerability based on traditional authorities (TAs). TAs are a smaller politcal 
+distinctions than districts, but in the survey data the district location was smallest political 
+authority given for households. This means that survey points could be assigned to different TAs, but not different districts. 
+this is a source of error for the analysis on TAs. 
+
 
 
 
