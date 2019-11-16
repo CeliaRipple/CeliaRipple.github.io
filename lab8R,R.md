@@ -88,6 +88,11 @@ Malcomb et al. did not state what their resolution was but we can assume that th
 resolution. To overcome this error in reproducibility, we adjusted our model to allow the user to define the resolution [model version 2](lab8model.png) . 
 We added the input "resolution" and a function to warp(reproject) the flood layer. "resolution" is an algorithm that allows 
 the user to define the cell size. (look at model)
+This issue with the cell size could have been easily avoided if Malcomb et al. had included the model as part of thier 
+publication. 
+
+Finally, Malcomb et al. did not include a discussion of error in thier write up, however there was a large source of error in 
+in their 
 
 
 
