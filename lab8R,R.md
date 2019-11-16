@@ -60,7 +60,7 @@ extremely bad.
 
 Next indicator scores were multiplied by their weights and summed to give a score for each household. 
 Going into the next lab, Professor Holler provided this model for the following analysis
-[vulnerabilitymodel](lab8model.png)
+[vulnerabilitymodel](put in old model version)
 This model went through the steps of (1) extracting the vulnerability scores from the "CapacityValue" and making it into the 
 "capacity" layer. (2) giving our map an extent by clipping "capacity" to the extent of the "livelihoodZones" layer. 
 "livelihoodZones" is the extent of Malawi's political boundaries minus the lake that borders the 
@@ -71,8 +71,24 @@ which there is no data on the capacity layer.
 Next we added functions to the original model to give the "floodclip" and the "droughtclip" layers scores from 1-5 based the 
 severvity of their inputs. For "droughtclip" we added r.quantile that gives its output in html file form which we saved as a 
 txt file then used in the r.rcode function with the drought to create classifed layers. This is the output of that function 
-layed over the Livelihoodzones layer to contextualize the extent of Malawi: [drought](drought.png) 
+layed over the Livelihoodzones layer to contextualize the extent of Malawi: [droughtoutput](drought.png) 
 the "floodclip" layer already has only 5 classifications after rasterization but the range is 0-4. To make this layer 
 consistant with the drought and capacity layers we used a raster calculator: "floodclip" + 1 and to shift the range to 1-5. 
-Finally we used a raster calculator to weight and add together the scores of the capacity and flood and drought layers. 
+Next we used a raster calculator to weight and add together the scores of the capacity and flood and drought layers. 
+The output of the flood layer looks like this [floodoutput](flood.png) 
+
+Next, to combine "capacityGrid", "Floodoutput" and "droughtoutput" we used raster calculator to weight each given Malcomb 
+et al.'s determined weights (40%, 20%, 20%) and added them together: ((2-"CapacityGrid")*.4)+("Floodoutput"*.2)+
+("Droughtoutput"*.2)= [final classification](finalclassification.png) 
+
+This final calssification visual is our reproduction of Malcomb et al.'s vulnerability assesmenet. Comparing our results to 
+theirs, however, there are some noticeable differences. Malcomb et al.'s map is at a finer resolution than ours because we 
+used the drought layer to define the resolution for the flood layer because they were initally at different resolutions. 
+Malcomb et al. did not state what their resolution was but we can assume that they used the flood layer to define their 
+resolution. To overcome this error in reproducibility, we adjusted our model to allow the user to define the resolution [model version 2](lab8model.png) . 
+We added the input "resolution" and a function to warp(reproject) the flood layer. "resolution" is an algorithm that allows 
+the user to define the cell size. (look at model)
+
+
+
 
