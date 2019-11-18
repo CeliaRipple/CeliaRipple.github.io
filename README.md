@@ -12,4 +12,4 @@ Hi I'm Celia
 
 [Lab 8 Reproducability and replicability](lab8R,R.md)
 
-[Twitter article]
+[Twitter article](Twitterwriteup.md)
