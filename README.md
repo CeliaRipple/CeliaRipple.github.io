@@ -10,4 +10,6 @@ Hi I'm Celia
 
 [PostGIS lab](postgresSQLlab.md)
 
-[Lab 8](lab8R,R.md)
+[Lab 8 Reproducability and replicability](lab8R,R.md)
+
+[Twitter article]
