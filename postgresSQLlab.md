@@ -15,7 +15,9 @@ An explanation of our process:
 to find the density of drains it was necessary to asign a subward to each drain point based on the 
 location. To do this we must add a column to the drains layer using this sql function:
 
+```sql
 alter table drains add column subward integer
+```
 
 Then we did a spatial intersect that would assign a subward to the drain using this sql function 
 
