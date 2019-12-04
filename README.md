@@ -8,7 +8,7 @@ Hi I'm Celia
 
 [Lab week 3](labweek3.md)
 
-[PostGIS lab](postgresSQLlab.md)
+[Dar Es Salam Vulnerability lab](DarEsSalamVulnerabilitylab.md)
 
 [Lab 8 Reproducability and replicability](lab8R,R.md)
 
