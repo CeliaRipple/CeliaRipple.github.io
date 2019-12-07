@@ -17,7 +17,7 @@ study using Milwaukee county census tracts and CBD. I obtained census tract boun
 https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html 
 and I obtained the tract information from American Fact Finder: https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml
 This is a visulization of the direction of census tracts from the CBD in Milwaukee [MapDirectionFromCityCenter](DirectionFromCityCenterMilwaukeeMetropolitan.png)
-Visulization of rent for census tracts in Milwaukee county
+Visulization of rent for census tracts in Milwaukee county [Rent](milwaukeerent.png)
 visulization of the distance from the CBD by census tract [Distance](DistFromCBD.png)
 
 scatter plot where Median Gross Rent is graphed in 
