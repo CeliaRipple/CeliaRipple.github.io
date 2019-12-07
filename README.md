@@ -2,7 +2,7 @@ Hi I'm Celia
 
 [First Assignment blog post](blogpost.md)
 
-[First lab assignment](Modelforlab1.md)
+[Distance and direction model](Modelforlab1.md)
 
 [dicussion of Open Source](Discussion_of_Open_Source.md)
 
