@@ -6,7 +6,7 @@ Hi I'm Celia
 
 [dicussion of Open Source](Discussion_of_Open_Source.md)
 
-[Lab week 3](labweek3.md)
+[Steam Flow Analysis lab](streamflowanalysis.md)
 
 [Dar Es Salam Vulnerability lab](DarEsSalamVulnerabilitylab.md)
 
