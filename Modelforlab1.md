@@ -25,4 +25,6 @@ relation to distance from the city center: [scatterplot](ScatterPlotRentvsDistan
 polar plot where Median Gross rent is graphed in relation to direction:[polarplot](PolarPlotRentvsDirection.html)
 Here you will find a link to to the model: [lab1model](Distance_from_point.model3m.model3)
 
+discussion of results: The graph and map outputs from the model show 
+
 [Discussion of open source](Discussion_of_Open_Source.md)
