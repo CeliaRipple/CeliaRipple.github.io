@@ -1,3 +1,5 @@
+Batch Script written by Celia Ripple
+
 ::hydrology analysis model
 
 ::set the path to your SAGA program
