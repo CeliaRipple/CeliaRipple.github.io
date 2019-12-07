@@ -10,6 +10,6 @@ Hi I'm Celia
 
 [Dar Es Salam Vulnerability lab](DarEsSalamVulnerabilitylab.md)
 
-[Lab 8 Reproducability and replicability](lab8R,R.md)
+[Reproducability and replicability lab](lab8R,R.md)
 
 [Twitter article](Twitterwriteup.md)
