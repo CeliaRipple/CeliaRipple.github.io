@@ -18,6 +18,7 @@ https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-
 and I obtained the tract information from American Fact Finder: https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml
 This is a visulization of the direction of census tracts from the CBD in Milwaukee [MapDirectionFromCityCenter](DirectionFromCityCenterMilwaukeeMetropolitan.png)
 Visulization of the median gross rent by census tract [Rent](MedianGrossRentbyCensusTractMilwaukee.png)
+visulization of the distance from the CBD by census tract
 
 scatter plot where Median Gross Rent is graphed in 
 relation to distance from the city center: [scatterplot](ScatterPlotRentvsDistance.html)
