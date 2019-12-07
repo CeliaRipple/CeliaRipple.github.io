@@ -20,6 +20,6 @@ This is a visulization of the direction of census tracts from the CBD in Milwauk
 Visulization of the median gross rent by census tract [Rent](MedianGrossRentbyCensusTractMilwaukee.png)
 
 scatter plot where Median Gross Rent is graphed in 
-relation to direction from the city center: [scatterplot](ScatterPlotRentvsDistance.html)
-Here you will find the same results visualized in a polar plot:[polarplot](PolarPlotRentvsDirection.html)
+relation to distance from the city center: [scatterplot](ScatterPlotRentvsDistance.html)
+polar plot where Median Gross rent is graphed in relation to direction:[polarplot](PolarPlotRentvsDirection.html)
 Here you will find a link to to the model: [lab1model](Distance_from_point.model3m.model3)
