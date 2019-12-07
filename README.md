@@ -1,6 +1,6 @@
 Hi I'm Celia
 
-[First Assignment blog post](blogpost)
+[First Assignment blog post](blogpost.md)
 
 [First lab assignment](Modelforlab1.md)
 
