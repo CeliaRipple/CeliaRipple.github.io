@@ -16,9 +16,10 @@ I ran the model through a case study using Milwaukee county census tracts and CB
 study using Milwaukee county census tracts and CBD. I obtained census tract boundaries from the census's website:
 https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html 
 and I obtained the tract information from American Fact Finder: https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml
-The link is an example of the model used on census tracts in Milwaukee county to find the direction in degrees of census tracts from the 
-city center [MapDirectionFromCityCenter](DirectionFromCityCenterMilwaukeeMetropolitan.png)  
-Here you will find a link to to the model: [lab1model](Distance_from_point.model3m.model3)
-Here you will find a visual of the from the case study described visualized in a scatter plot where Median Gross Rent is graphed in 
+This is a visulization of the direction of census tracts from the CBD in Milwaukee [MapDirectionFromCityCenter](DirectionFromCityCenterMilwaukeeMetropolitan.png)
+Visulization of the median gross rent by census tract [Rent](MedianGrossRentbyCensusTractMilwaukee.png)
+
+scatter plot where Median Gross Rent is graphed in 
 relation to direction from the city center: [scatterplot](ScatterPlotRentvsDistance.html)
 Here you will find the same results visualized in a polar plot:[polarplot](PolarPlotRentvsDirection.html)
+Here you will find a link to to the model: [lab1model](Distance_from_point.model3m.model3)
