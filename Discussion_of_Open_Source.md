@@ -17,3 +17,7 @@ may not be able to tell the whole story. For this reason, geographic theory rema
 field of geography. Likewise, humanist geographers can strengthen their analysis through the use of GIS. Quantitative data
 that can be modeled in a graph or map provides a different visualization of a problem that can appeal to different 
 observers and can reinforce arguments. 
+
+links to articles: 
+https://www.utpjournals.press/doi/pdf/10.3138/carto.42.3.235
+https://www.utpjournals.press/doi/pdf/10.3138/T6U8-171M-452W-516R
