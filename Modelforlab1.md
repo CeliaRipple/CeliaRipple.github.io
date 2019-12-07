@@ -3,9 +3,13 @@ Distance from point model:
 ![Image of model](Imageofpointdistancemodel.png)
 
 this model allows the user to find the directions and the distances of polygons on a shape file from a point either on a 
-separate layer or a point created via the centroid function.
-Image of Model
-The user should consider their polygon shapefile to be featureinput2 in this model. City center should be a coordinate point on a separate layer, or can be created by selecting polygons on the shapefile. The Model will find the centroids of the selected polygons then average their centers to create one coordinate point. 
+separate layer or a point created via the centroid function. This model is a sensitive to the project of the input shapefiles
+User should choose projections or reproject into projections that work for calculating distance such as state plane or UTM 
+projections.  
+
+The user should consider their polygon shapefile to be featureinput2 in this model. City center should be a coordinate point 
+on a separate layer, or can be created by selecting polygon(s) on the shapefile. The Model will find the centroids of the 
+selected polygons then average their centers to create one coordinate point. 
 Then the model will find the centroids of all the polygons in the featureinput2 layer and calculate their distances and direction from the citycenter layer. 
 An added feature allows the user to create original names for output fields.
 The link is an example of the model used on census tracts in Milwaukee county to find the direction in degrees of census tracts from the city center [MapDirectionFromCityCenter](Direction From City Center Milwaukee Metropolitan.png)  
