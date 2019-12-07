@@ -29,7 +29,7 @@ GADM version 2.8 boundaries for Malawi
 FEWSNET livelihood zones 
 
 We used the PostGIS extenstion of PostGresSQl as our GIS platform and QGIS to visulize the results
-Complete SQL file: [SQL]
+
 
 Malcomb et al. assigned a vulnerability score from 1-5 to each household based on the vulnerability indicators chosen for 
 the study. The indicators from the DHS data was categorized uder adaptive capacity which was further broken down into assest 
@@ -42,12 +42,17 @@ Platform (GRID).
 We used 
 
 Our first step in reproducing Malcomb et al.'s findings was to assign a vulnerability score (1-5) to each household for each
-indicator in the adaptability analysis. We used the ntile function to do this, but ntile cannot account for indicators that 
+indicator in the adaptability analysis. We did this step as a class each taking on one asset to classify. Complete SQL file for the  
+class process: [SQL](https://github.com/GIS4DEV/GIS4DEV.github.io/tree/master/mwi) This file also includes the process for deleting 
+missing data and joining the information from tables together. 
+
+To classify the assests on a scale of 1-5, we used the ntile function, but ntile cannot account for indicators that 
 were given the same score, so scores needed to be converted first to a percent rank because percent rank allows ntile to 
 account for ties in the indicator scores. 
 Here is an example of an SQL query that demonstrates converting the survey entries from the number of
 sick people per household into a vulnerabilty score:
 
+```sql
 Step 1: add a column 
 ALTER TABLE dhshh ADD COLUMN sick REAL;
 Step 2: udpate table to make scores a percent rank  
@@ -59,21 +64,21 @@ SELECT hhid, ta_id,
 NTILE(5) OVER(
 	ORDER BY hv248
 ) AS num_sick,
- 
+ ```
 An important thing to note: some indicators need to be assigned scores in order descending because a higher number indicates 
 a more vulnerable state. In the case of sick people per household, sickness indicates more vulnerability. 
 More sick people = lower score. In other cases, such as livestock per household where more livestock means more adaptability 
 More livestock = higher score. 
 
-our class ran into a reproducability problem with indicators that were enter described as true or false. For example, having a 
-radio, or electricty was entered at 1 for true, 0 for false in the survey. Malcomb et al. did not describe their process for 
+our class ran into a reproducability problem with indicators that were entered as true or false. For example, having a 
+radio, or electricty was entered as 1 for true, 0 for false in the survey. Malcomb et al. did not describe their process for 
 for converting true/false answers into a 1-5 score. In our anaylsis we decided to give true answers a value of 5 and false a 
 value of 1, but we are aware that this distorts our results by limiting these indicators to being either extremely good or 
 extremely bad. 
 
 Next indicator scores were multiplied by their weights and summed to give a score for each household. 
 Going into the next lab, Professor Holler provided this model for the following analysis
-[vulnerabilitymodel](put in old model version)
+[vulnerabilitymodel](labmodel.model3)
 This model went through the steps of (1) extracting the vulnerability scores from the "CapacityValue" and making it into the 
 "capacity" layer. (2) giving our map an extent by clipping "capacity" to the extent of the "livelihoodZones" layer. 
 "livelihoodZones" is the extent of Malawi's political boundaries minus the lake that borders the 
@@ -81,14 +86,15 @@ country. (3) Rasterize the "flood", "drought" and "capacity" layers so that we c
 "drought" layers were downloaded from the GRID UNEP site https://preview.grid.unep.ch/index.php?preview=data&lang=eng
 (4) drought and flood layers were masked to the "Capacity Grid" so that there will be no data in these layer for cells in 
 which there is no data on the capacity layer. 
-Next we added functions to the original model to give the "floodclip" and the "droughtclip" layers scores from 1-5 based the 
+Next we used raster functions in QGIS to give the "floodclip" and the "droughtclip" layers scores from 1-5 based the 
 severvity of their inputs. For "droughtclip" we added r.quantile that gives its output in html file form which we saved as a 
 txt file then used in the r.rcode function with the drought to create classifed layers. This is the output of that function 
 layed over the Livelihoodzones layer to contextualize the extent of Malawi: [droughtoutput](drought.png) 
+notice that there are rather large areas of no data in the drought layer. 
 the "floodclip" layer already has only 5 classifications after rasterization but the range is 0-4. To make this layer 
 consistant with the drought and capacity layers we used a raster calculator: "floodclip" + 1 and to shift the range to 1-5. 
-Next we used a raster calculator to weight and add together the scores of the capacity and flood and drought layers. 
-The output of the flood layer looks like this [floodoutput](flood.png) 
+The output of the flood layer looks like this [floodoutput](flood.png)
+notice again the large areas of no data. 
 
 Next, to combine "capacityGrid", "Floodoutput" and "droughtoutput" we used raster calculator to weight each given Malcomb 
 et al.'s determined weights (40%, 20%, 20%) and added them together: ((2-"CapacityGrid")*.4)+("Floodoutput"*.2)+
@@ -100,12 +106,18 @@ used the drought layer to define the resolution for the flood layer because they
 Malcomb et al. did not state what their resolution was but we can assume that they used the flood layer to define their 
 resolution. To overcome this error in reproducibility, we adjusted our model to allow the user to define the resolution [model version 2](lab8model.png) . 
 We added the input "resolution" and a function to warp(reproject) the flood layer. "resolution" is an algorithm that allows 
-the user to define the cell size. (look at model)
+the user to define the cell size. 
 This issue with the cell size could have been easily avoided if Malcomb et al. had included the model as part of thier 
 publication. 
 
-Finally, Malcomb et al. did not include a discussion of error in thier write up, however there was a large source of error in 
-in their analysis. To protect the privacy of participants in the survey a buffer was placed around each survey 
+# Discussion
+Aside from the lack of access to some of the data, we found some difficulties in reproducing the study because of a lack of explicit 
+information about the methods. Malcomb et al. could make their study more reproducible by including their model with their methods. 
+including a model would clear up the uncertainty about how they clipped the extenst of their data, what resolution they used, 
+how they classified entries that were entered as true or false. For the replicability of the study they could also include a more
+in depth discussion of how they determined the indicators for vulnerability and whether those indicators would be applicable to 
+another place. Finally, Malcomb et al. needs to include discussion about the sources of uncertainty. 
+To protect the privacy of participants in the survey a buffer was placed around each survey 
 point- a 5km radius for each point in a rural area and a 2km radius for each in an urban area. Then the survey point was 
 randomly placed in that buffer zone so that the exact location of the survey was obscured. The source of error came in that 
 Malcomb et al. analyzed vulnerability based on traditional authorities (TAs). TAs are a smaller politcal 
