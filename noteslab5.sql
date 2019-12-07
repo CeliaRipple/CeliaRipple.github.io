@@ -1,3 +1,5 @@
+Authors of this code are Cameron Wiener and Celia Ripple 
+
 select *
 from planet_osm_polygon
 where "natural" = 'wetland'
