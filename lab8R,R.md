@@ -1,10 +1,12 @@
+# Reproducibility and Replicability
+# Introduction:
 Over the course of lab weeks 7 and 8, our class looked at problems of reproducibility and replicability 
 in geography. We focused on a paper titled "Vulnerability Modeling for Sub-saharan Africa: an Operationalized 
-Approach in Malawi" published by Malcomb, Weaver, and Krakowka. We read through the paper and tried to recreate 
+Approach in Malawi" published by Malcomb, Weaver, and Krakowka (Malcomb 2014). We read through the paper and tried to recreate 
 their findings from the information the paper provided in the methods section. We ran into some immediate problems
 with the idea of a vulnerability analysis. Jochen Hinkel argues that there is not real way to measure vulnerability 
 because there is so much spatial heterogenity in vulnerability analysis and the real impacts of 
-vulnerability cannot be easily measured nor should they be confused with measurements of harm. This point speaks to 
+vulnerability cannot be easily measured nor should they be confused with measurements of harm (Hinkel 2011). This point speaks to 
 a greater issue about the challenges of reproducing qualitative data. Malcomb et al. determined
 that vulnerability could be described in terms of resilience based on adaptive capacity which they decided was determined
 by a household's assets and access to resources. The factors that malcomb et al. used to determine adaptive capacity and 
@@ -101,6 +103,6 @@ authority given for households. This means that survey points could be assigned 
 this is a source of error for the analysis on TAs. 
 
 
-
-
+Resources: Malcomb, Dylan W., Elizabeth A. Weaver, and Amy Richmond Krakowka. “Vulnerability Modeling for Sub-Saharan Africa: An Operationalized Approach in Malawi.” Applied Geography 48 (March 1, 2014): 17–30. https://doi.org/10.1016/j.apgeog.2014.01.004.
+Hinkel, Jochen. “‘Indicators of Vulnerability and Adaptive Capacity’: Towards a Clarification of the Science–Policy Interface.” Global Environmental Change 21, no. 1 (February 1, 2011): 198–208. https://doi.org/10.1016/j.gloenvcha.2010.08.002.
 
