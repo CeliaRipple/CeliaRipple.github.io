@@ -78,19 +78,12 @@ from doriancounts
 where counties._geoid = doriancounts.geoid
 
 /*Caluculate a tweet rate*/
-alter table counties add column doriantweetrate float 
-
-::did not use in the end::
-alter table counties 
-add column population integer; 
-update counties 
-set population = "POP"
-
+alter table counties add column doriantweetrate float; 
 update counties 
 set doriantweetrate = ((1*1.0000)*( tweetscountdorian/"POP"))*10000
 
+/* normalize the the dorian tweets by the november tweets*/
 alter table counties add column ndti real 
-
 update counties 
 set ndti = (tweetscountdorian - tweetscount)/ (tweetscountdorian + tweetscount)
 Where tweetscount > 0 or tweetscountdorian > 0 
