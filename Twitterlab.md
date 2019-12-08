@@ -4,7 +4,10 @@ First we uploaded the two collections of tweets into a PostGIS database using te
 # Introduction: 
 Twitter, like other forms of social media, is a source of big data on the everyday experiences of people. With the rise of 
 twitter communications geograhpers are exploring whether twitter data can be used to track major events like natural disasters and political events. In this lab, we used twitter data on Hurricane Dorian from November 2019 to explore whether the real storm or the storm of fake news from President Trump about the path of the storm generated more tweet content. The goal of this lab was to make a heat map (kernal density) in QGIS that showed areas with a high rate of tweets about Hurricane Dorian, and two maps- one that showed the hot spots and cold spots of Dorian tweets and another that identified the counties where the difference was statistically significant based one p values 0.05, 0.01, 0.001. 
-[Heatmap](
+![Heatmap](dorianheatmap.png)
+![Hotspot](countiesGetisOrdMapFrame.png)
+![Statistical Significance](counties2GetisOrdMapFrame.png)
+
 # Data 
 For this lab we used two collections of tweets: 
 One related to Hurricane Dorian defined by keywords: fill in 
