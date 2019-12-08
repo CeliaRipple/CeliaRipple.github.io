@@ -22,5 +22,8 @@ For this lab we used Rstudio, PostGIS, GeoDa, and QGIS
 [Full R code](twitterForLab2.r)  
 
 First we uploaded the two collections of tweets into a PostGIS database using te "UPLOAD RESULTS TO POSTGIS DATABASE" section from the R code above. We also used the "SPATIAL ANALYSIS" section to download the county level geographic data using the Census API. 
-Once everything was downloaded into the PostGIS database we used 
+Once everything was downloaded into the PostGIS database we used the SQl code here: 
 [Full SQL code](lab10notes.sql)
+to run though the next set of steps: 
+
+First, 
