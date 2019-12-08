@@ -12,6 +12,7 @@ We downloaded this data via Twitter API using a developer acount. The maximum nu
 We also used the projected coordinate system: SA Contiguous Lambert Conformal Conic projection from https://www.spatialreference.org The SRS is 102004 . There is a PostGIS insert statement to add the coordinate system to a database.
 And we used county level geographic and population data from the US census. The R code we used for this is included in the 
 the next link
+We used Rstudio and 
 
 # Process 
 [Full R code]()  
@@ -19,3 +20,4 @@ the next link
 First we uploaded the two collections of tweets into a PostGIS database. 
 
 Next  
+[Full SQL code](lab10notes.sql)
