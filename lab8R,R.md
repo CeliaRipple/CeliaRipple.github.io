@@ -104,7 +104,7 @@ This final calssification visual is our reproduction of Malcomb et al.'s vulnera
 theirs, however, there are some noticeable differences. Malcomb et al.'s map is at a finer resolution than ours because we 
 used the drought layer to define the resolution for the flood layer because they were initally at different resolutions. 
 Malcomb et al. did not state what their resolution was but we can assume that they used the flood layer to define their 
-resolution. To overcome this error in reproducibility, we adjusted our model to allow the user to define the resolution [model version 2](lab8model.png) . 
+resolution. To overcome this error in reproducibility, we adjusted our model to allow the user to define the resolution [model version 2](vulnerability2.5.model3) . 
 We added the input "resolution" and a function to warp(reproject) the flood layer. "resolution" is an algorithm that allows 
 the user to define the cell size. 
 This issue with the cell size could have been easily avoided if Malcomb et al. had included the model as part of thier 
