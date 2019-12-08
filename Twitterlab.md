@@ -15,9 +15,9 @@ the next link
 We used Rstudio and 
 
 # Process 
-[Full R code]()  
+[Full R code](twitterForLab.r)  
 
-First we uploaded the two collections of tweets into a PostGIS database. 
+First we uploaded the two collections of tweets into a PostGIS database using te "UPLOAD RESULTS TO POSTGIS DATABASE" section from the R code above. 
 
 Next  
 [Full SQL code](lab10notes.sql)
