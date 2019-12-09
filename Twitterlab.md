@@ -126,6 +126,15 @@ For this part of the lab, we used some functions in QGIS and GeoDa.
 First we connected to our databases in GeoDa. 
 Then we used the Weights Manager tool under Tools and selected create a new weights matrix. 
 Use the geoid as the unique id. Keep threshold distance at default and Create. 
-
 From here we created a local G* cluster map which is located under Space. 
-the variable is doriantweet rate 
+the variable is doriantweet rate. Create. The outputs are the the hotspot and the statisical significance maps shown above- 
+
+To create the Heatmap (Kernel Density) we first converted the counties into points by using the centroid function in QGIS. Then with this layer as the input we used the Heatmap (Kernel Density Estimation) Algorithm in QGIS. 
+We set the radius to 100 km and the set the Weight from field to the tweet rate column 
+We set the pixels to 500 meters. 
+This parameters were chosen so that the function would run at a reasonable speed, but also have good visulation. 
+
+# Discussion:
+the Statistical significance map and the hotspots map. Looking at the two maps together we see that there are "hotspot" counties shown in red in North Carolina and Florida, however results are significant only to 0.05 in Florida but 0.001 for a number of counties in North Carolina. This incates that the eastern region of North Carolina was in fact a hotspot. 
+
+
