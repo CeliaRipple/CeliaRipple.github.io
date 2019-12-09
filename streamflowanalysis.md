@@ -57,16 +57,7 @@ The batch process for the same analysis with SRTM data looks like this [SRTM Bat
 Notice that the only difference between the two models are the prefix names and the file locations of the data. 
 
 Batch processes allow the user to run multiple data sets through the same anaylsis without having to run each tool individually in SAGA.
-The user can compare the outputs of two different data sets side by side. Here is a side by side comparison of the channel networks outputs for SRTM and ASTER. 
-
-ASTER
-![Channel Networks ASTER](Batch1ASTERChannelntwrk.png)
-
-
-SRTM
-![Channel Networks SRTM](Batch2realSRTMchannelntwrk.png)
-
-Batch processes were useful for this lab because the purpose of the lab because they allow the user to create multiple outputs of the same place while changing things like the data source or the interpolation techniques. 
+This was useful for this lab because we could easily run the same process on two data sources. 
 
 The user can also run Number files for the study area through the first two steps of the batch procress so that the user will have a 
 mosaicked and reprojected map of the number file. The number file has a code that allows the user to see where the data for each cell 
@@ -79,7 +70,20 @@ a legend to interpret that can be found here ![legend](ASTERNUMfile_legend.png)
 
 One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3.
 
-To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DEMasterminusSRTM.PNG) Areas in darker red and darker blue indicate higher areas of difference. Areas where the elevation changes dramatcially such as on steep slopes there is more difference in the elecation data. The area shown here has is one such area: ![uncertainty](areaofuncertainty.PNG)
+Channel network maps were the output of running the full batch process on the SRTM and ASTER DEM files:
+Here is a side by side comparison of a section of the the channel networks outputs for SRTM and ASTER.
+
+ASTER
+![Channel Networks ASTER](ASTERchannelntwrk.PNG)
+
+
+SRTM
+![Channel Networks SRTM](SRTMchannelntwk.PNG)
+
+
+
+
+It is difficult to see any remarkable differences between the outputs of these two maps. However, the differences in two data sets cause there to be differences in the outputs which is a source of error for our anaylsis. To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DEMasterminusSRTM.PNG) Areas in darker red and darker blue indicate higher areas of difference. Areas where the elevation changes dramatcially such as on steep slopes there is more difference in the elecation data. The area shown here has is one such area: ![uncertainty](areaofuncertainty.PNG)
 looking at the satellite imagery for the same area, we can see that this is an area with a lot of steep valleys: ![Satellite](satelliteofareauncertainty.PNG) 
 The areas of dark red indicate that the SRTM sampling found higher elevations than the ASTER sampling. The spots of dark blue indicate that the ASTER data had high elevations. The differences in elevation are a result of differences in sampling methods between ASTER and SRTM. ASTER uses stereo correlation while SRTM uses radar interferometry. Being aware of the of the differences in the data helps to idenify where there may be uncertainty in the stream flow anaylsis. 
 
