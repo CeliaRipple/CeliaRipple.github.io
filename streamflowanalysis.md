@@ -5,7 +5,9 @@ The purpose of this lab was to learn how to use the tools in SAGA version 6.2 an
 
 # Process
 step 1: 
-Download and import 2 DEM tiles of ASTER data collected by NASA and the Japanese Space System from the Earth Data Search website. https://lpdaac.usgs.gov/products/astgtmv003/ Users can downlpad both the elevation and number files here. After importing the DEMs into the saga they will look like this ![Demsnotmosaiced](DEMfilesASTER.png)
+Download and import 2 DEM tiles of ASTER data collected by NASA and the Japanese Space System from the Earth Data Search website. https://lpdaac.usgs.gov/products/astgtmv003/ Users can download both the elevation and number files here. The granules that I downloaded were: ASTGTMV003_S03E037 and ASTGTMV003_S04E037
+
+After importing the DEMs into the saga they will look like this ![Demsnotmosaiced](DEMfilesASTER.png)
 
 The DEMs need to be mosaiced together to create one seemless DEM. The Mosaicking tool lives under Grid> gridding> Mosaicking
 Use the Nearest Neighbor parameter to execute the tool.
@@ -45,11 +47,11 @@ When you crteate this layer it will look like this. ![Channel Networks](channeln
 
 # Lab 4 
 # Introduction 
-For lab 4, we looked at the same study area, but used a batch procress to run data to do hydrological analysis. We then used this batch 
-process to run data from ASTER as we did in the first lab and SRTM data collected by NASA at 1 arc second on the same area of mnt. 
-Kilimanjaro. SRTM Elevation can be found here:  https://lpdaac.usgs.gov/products/srtmgl1v003/ and the SRTM number files can be found here: https://lpdaac.usgs.gov/products/srtmgl1nv003/
+For lab 4, we looked at the same study area but used a batch procress to run data to do hydrological analysis. We then used this batch 
+process to run data from ASTER (same granules as lab3) as we did in the first lab and SRTM data collected by NASA at 1 arc second on the same area of mnt. Kilimanjaro. SRTM Elevation can be found here:  https://lpdaac.usgs.gov/products/srtmgl1v003/ and the SRTM number files can be found here: https://lpdaac.usgs.gov/products/srtmgl1nv003/ The granules I used were: S03E037 and S04E037
+
 The purpose of this lab was to evaluate level of error and uncertainty that there is in creating a stream flow analysis using this process. 
-# Process 
+# Process  
 The batch process for the hydrological anaylsis of ASTER data looks like this [ASTER Batch Process](mosaic_utmproj_hillshade_sinks_sinkremoval_flowaccumulation_Channelnetworks.bat)
 The batch process for the same analysis with SRTM data looks like this [SRTM Batch Process](Mosaic_UTMproj_hillshade_sinks_sinkremoval_flowAcc_Channels_SRTM.bat)
 Notice that the only difference between the two models are the prefix names and the file locations of the data. 
@@ -78,7 +80,8 @@ a legend to interpret that can be found here ![legend](ASTERNUMfile_legend.png)
 One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3.
 
 To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DEMasterminusSRTM.PNG) Areas in darker red and darker blue indicate higher areas of difference. Areas where the elevation changes dramatcially such as on steep slopes there is more difference in the elecation data. The area shown here has is one such area: ![uncertainty](areaofuncertainty.PNG)
-
+looking at the satellite imagery for the same area, we can see that this is an area with a lot of steep valleys: [Satellite](satelliteofareauncertainty.PNG) 
+The areas of dark red indicate that the SRTM sampling found higher elevations than the ASTER sampling. The spots of dark blue indicate that the ASTER data had high elevations. The differences in elevation are a result of differences in sampling methods between ASTER and SRTM. ASTER uses stereo correlation while SRTM uses radar interferometry. Being aware of the of the differences in the data helps to idenify where there may be uncertainty in the stream flow anaylsis. 
 The same tool can be used to run an anaylsis on outputs of flow accumulation from the SRTM and ASTER data. 
 Here are the results of ASTER flow accummulation minus SRTM flow accummulation ![Flow difference](diffflowaccASTERminusSRTM.png)
 ![legend](diffflowaccASTERminusSRTM_legend.png) 
