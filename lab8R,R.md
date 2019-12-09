@@ -93,12 +93,12 @@ layed over the Livelihoodzones layer to contextualize the extent of Malawi: [dro
 notice that there are rather large areas of no data in the drought layer. 
 the "floodclip" layer already has only 5 classifications after rasterization but the range is 0-4. To make this layer 
 consistant with the drought and capacity layers we used a raster calculator: "floodclip" + 1 and to shift the range to 1-5. 
-The output of the flood layer looks like this [floodoutput](flood.png)
+The output of the flood layer looks like this [floodoutput](flood1map.png)
 notice again the large areas of no data. 
 
 Next, to combine "capacityGrid", "Floodoutput" and "droughtoutput" we used raster calculator to weight each given Malcomb 
 et al.'s determined weights (40%, 20%, 20%) and added them together: ((2-"CapacityGrid")*.4)+("Floodoutput"*.2)+
-("Droughtoutput"*.2)= [final classification](finalclassification.png) 
+("Droughtoutput"*.2)= [final classification](finalcalssmap.png) 
 
 This final calssification visual is our reproduction of Malcomb et al.'s vulnerability assesmenet. Comparing our results to 
 theirs, however, there are some noticeable differences. Malcomb et al.'s map is at a finer resolution than ours because we 
