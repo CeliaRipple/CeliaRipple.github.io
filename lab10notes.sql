@@ -28,7 +28,7 @@ alter table counties add column _geoid varchar(5)
 update counties 
 set _geoid="GEOID"
 
-/* join the tweets with the counties using geoid*/
+/* join the tweets with the counties using a spatial intersect*/
 alter table november add column geoid varchar(5);
 update november
 set geoid = _geoid
