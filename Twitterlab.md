@@ -106,4 +106,17 @@ set tweetscountdorian = count
 from doriancounts
 where counties._geoid = doriancounts.geoid
 ```
-
+the next step is to calculate the dorian tweets normalized by the population. We do this so that all areas will be weighted equally regardless of the population. Without this step the areas with higher population would like like hotspots of tweets about the hurriane just because more people are tweeting generally in these areas. 
+First add a column for the tweet rate. Then update it with the equation to normalize the data 
+``` sql
+alter table counties add column doriantweetrate float; 
+update counties 
+set doriantweetrate = ((1*1.0000)*( tweetscountdorian/"POP"))*10000
+```
+The last step is to normalize the dorian tweets against the baseline numbers of tweets in November. Add a column for the ndti and use the expression to normalize the tweet data. With this expression the counties will either be either -1, 0, or 1. 
+``` sql
+alter table counties add column ndti real; 
+update counties 
+set ndti = (tweetscountdorian - tweetscount)/ (tweetscountdorian + tweetscount)
+Where tweetscount > 0 or tweetscountdorian > 0 
+```
