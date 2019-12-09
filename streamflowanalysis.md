@@ -1,7 +1,11 @@
-This is a visualization of the steps for week 3 lab
+# week 3 lab
 
+# Introduction 
+The purpose of this lab was to learn how to use the tools in SAGA version 6.2 and SRTM and ASTER data to do a stream flow analysis for the area around mnt. Kilimanjaro. 
+
+# Process
 step 1: 
-Download and import 2 DEM tiles of ASTER data collected by NASA and the Japanese Space System from the Earth Data Search website. After importing the DEMs into the saga they will look like this ![Demsnotmosaiced](DEMfilesASTER.png)
+Download and import 2 DEM tiles of ASTER data collected by NASA and the Japanese Space System from the Earth Data Search website. https://lpdaac.usgs.gov/products/astgtmv003/ Users can downlpad both the elevation and number files here. After importing the DEMs into the saga they will look like this ![Demsnotmosaiced](DEMfilesASTER.png)
 
 The DEMs need to be mosaiced together to create one seemless DEM. The Mosaicking tool lives under Grid> gridding> Mosaicking
 Use the Nearest Neighbor parameter to execute the tool.
@@ -39,11 +43,13 @@ Again use the sink filled DEM for the elevation. Create the Channel network, the
 When you crteate this layer it will look like this. ![Channel Networks](channelnetworkASTER.png)
 
 
-Lab4 
-
+# Lab 4 
+# Introduction 
 For lab 4, we looked at the same study area, but used a batch procress to run data to do hydrological analysis. We then used this batch 
 process to run data from ASTER as we did in the first lab and SRTM data collected by NASA at 1 arc second on the same area of mnt. 
-Kilimanjaro. 
+Kilimanjaro. SRTM Elevation can be found here:  https://lpdaac.usgs.gov/products/srtmgl1v003/ and the SRTM number files can be found here: https://lpdaac.usgs.gov/products/srtmgl1nv003/
+The purpose of this lab was to evaluate level of error and uncertainty that there is in creating a stream flow analysis using this process. 
+# Process 
 The batch process for the hydrological anaylsis of ASTER data looks like this [ASTER Batch Process](mosaic_utmproj_hillshade_sinks_sinkremoval_flowaccumulation_Channelnetworks.bat)
 The batch process for the same analysis with SRTM data looks like this [SRTM Batch Process](Mosaic_UTMproj_hillshade_sinks_sinkremoval_flowAcc_Channels_SRTM.bat)
 Notice that the only difference between the two models are the prefix names and the file locations of the data. 
@@ -58,8 +64,7 @@ ASTER
 SRTM
 ![Channel Networks SRTM](Batch2realSRTMchannelntwrk.png)
 
-Batch processes were useful for this lab because the purpose of the lab is to identify and evaluate the prevalance of error in our 
-hydrological analysis. 
+Batch processes were useful for this lab because the purpose of the lab because they allow the user to create multiple outputs of the same place while changing things like the data source or the interpolation techniques. 
 
 The user can also run Number files for the study area through the first two steps of the batch procress so that the user will have a 
 mosaicked and reprojected map of the number file. The number file has a code that allows the user to see where the data for each cell 
