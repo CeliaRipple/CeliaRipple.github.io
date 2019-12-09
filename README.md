@@ -13,3 +13,5 @@ Hi I'm Celia
 [Reproducability and replicability lab](lab8R,R.md)
 
 [Twitter article](Twitterwriteup.md)
+
+[Twitter Lab](Twitterlab.md)
