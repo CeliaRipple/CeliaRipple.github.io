@@ -3,7 +3,7 @@
 
 # Introduction: 
 Twitter, like other forms of social media, is a source of big data on the everyday experiences of people. With the rise of 
-twitter communications geograhpers are exploring whether twitter data can be used to track major events like natural disasters and political events. In this lab, we used twitter data on Hurricane Dorian from November 2019 to explore whether the real storm or the storm of fake news from President Trump about the path of the storm generated more tweet content. The goal of this lab was to make a heat map (kernal density) in QGIS that showed areas with a high rate of tweets about Hurricane Dorian, and two maps- one that showed the hot spots and cold spots of Dorian tweets and another that identified the counties where the difference was statistically significant based one p values 0.05, 0.01, 0.001. 
+twitter communications geograhpers are exploring whether twitter data can be used to track major events like natural disasters and political events. In this lab, we used twitter data on Hurricane Dorian from September 11th 2019 to explore whether the real storm or the storm of fake news from President Trump about the path of the storm generated more tweet content. The goal of this lab was to make a heat map (kernal density) in QGIS that showed areas with a high rate of tweets about Hurricane Dorian, and two maps- one that showed the hot spots and cold spots of Dorian tweets and another that identified the counties where the difference was statistically significant based one p values 0.05, 0.01, 0.001. 
 ![Heatmap](dorianheatmap.png)
 ![Hotspot](countiesGetisOrdMapFrame.png)
 ![Statistical Significance](counties2GetisOrdMapFrame.png)
@@ -20,8 +20,9 @@ For this lab we used Rstudio, PostGIS, GeoDa, and QGIS
 
 # Process 
 [Full R code](twitterForLab2.r)  
-
-First we uploaded the two collections of tweets into a PostGIS database using te "UPLOAD RESULTS TO POSTGIS DATABASE" section from the R code above. We also used the "SPATIAL ANALYSIS" section to download the county level geographic data using the Census API. 
+ 
+The tweets collected for this lab were based on keywords searches with R code that is outlined in the code above. The keywords we used to identify hurricane tweets were: “dorian,” “hurricane” and “sharpiegate.” 
+Then we uploaded the two collections of tweets into a PostGIS database using te "UPLOAD RESULTS TO POSTGIS DATABASE" section from the R code above. We also used the "SPATIAL ANALYSIS" section to download the county level geographic data using the Census API. 
 Once everything was downloaded into the PostGIS database we used the SQl code here: 
 [Full SQL code](lab10notes.sql)
 to run though the next set of steps: 
@@ -135,6 +136,10 @@ We set the pixels to 500 meters.
 This parameters were chosen so that the function would run at a reasonable speed, but also have good visulation. 
 
 # Discussion:
-the Statistical significance map and the hotspots map. Looking at the two maps together we see that there are "hotspot" counties shown in red in North Carolina and Florida, however results are significant only to 0.05 in Florida but 0.001 for a number of counties in North Carolina. This incates that the eastern region of North Carolina was in fact a hotspot. 
+Looking at the Statistical significance map and the hotspots map together we see that there are "hotspot" counties shown in red in North Carolina and Florida, however results are significant only to 0.05 in Florida but 0.001 for a number of counties in North Carolina. This incates that the eastern region of North Carolina was in fact a hotspot.
 
+The heatmap also shows bright areas in Flordia and North Carolina. The heat map shows not just where high numbers of tweets are located, but where they are specifically clustered. 
 
+error: using tweets to study natural disaster events is becoming more common in geographic studies, however it is important to note that only 1% of tweets have geocoordinates. The spatial specificity of tweets also can vary a lot depending on whether the tweet is located based on geocoordinates, user profile, or bounding boxes. 
+
+Conclusion: From this lab we were able to determine that the spikes in tweets about the hurricane follow the actual path of the hurricane and not the path that the Trump drew with a sharpie. 
