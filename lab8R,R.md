@@ -101,7 +101,7 @@ et al.'s determined weights (40%, 20%, 20%) and added them together: ((2-"Capaci
 ("Droughtoutput"*.2)= [final classification](finalcalssmap.png) 
 
 This final calssification visual is our reproduction of Malcomb et al.'s vulnerability assesmenet. Comparing our results to 
-theirs, however, there are some noticeable differences. Malcomb et al.'s map is at a finer resolution than ours because we 
+theirs, [Malcomb Vulnerability](MalcombVulnerability.png) there are some noticeable differences. Malcomb et al.'s map is at a finer resolution than ours because we 
 used the drought layer to define the resolution for the flood layer because they were initally at different resolutions. 
 Malcomb et al. did not state what their resolution was but we can assume that they used the flood layer to define their 
 resolution. To overcome this error in reproducibility, we adjusted our model to allow the user to define the resolution [model version 2](vulnerability2.5.model3) . 
@@ -120,8 +120,9 @@ another place. Finally, Malcomb et al. needs to include discussion about the sou
 To protect the privacy of participants in the survey a buffer was placed around each survey 
 point- a 5km radius for each point in a rural area and a 2km radius for each in an urban area. Then the survey point was 
 randomly placed in that buffer zone so that the exact location of the survey was obscured. The source of error came in that 
-Malcomb et al. analyzed vulnerability based on traditional authorities (TAs). TAs are a smaller politcal 
-distinctions than districts, but in the survey data the district location was smallest political 
+Malcomb et al. analyzed resilience based on traditional authorities (TAs) shown on this map: 
+[Resilience TAs](MalcombResilienceScores.png) 
+TAs are smaller politcal distinctions than districts, but in the survey data the district location was smallest political 
 authority given for households. This means that survey points could be assigned to different TAs, but not different districts. 
 this is a source of error for the analysis on TAs. 
 
