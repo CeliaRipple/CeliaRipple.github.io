@@ -82,9 +82,13 @@ One can see using the number file and the legend that most of the data was GDEM 
 To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DEMasterminusSRTM.PNG) Areas in darker red and darker blue indicate higher areas of difference. Areas where the elevation changes dramatcially such as on steep slopes there is more difference in the elecation data. The area shown here has is one such area: ![uncertainty](areaofuncertainty.PNG)
 looking at the satellite imagery for the same area, we can see that this is an area with a lot of steep valleys: ![Satellite](satelliteofareauncertainty.PNG) 
 The areas of dark red indicate that the SRTM sampling found higher elevations than the ASTER sampling. The spots of dark blue indicate that the ASTER data had high elevations. The differences in elevation are a result of differences in sampling methods between ASTER and SRTM. ASTER uses stereo correlation while SRTM uses radar interferometry. Being aware of the of the differences in the data helps to idenify where there may be uncertainty in the stream flow anaylsis. 
+
 The same tool can be used to run an anaylsis on outputs of flow accumulation from the SRTM and ASTER data. 
-Here are the results of ASTER flow accummulation minus SRTM flow accummulation ![Flow difference](diffflowaccASTERminusSRTM.png)
-![legend](diffflowaccASTERminusSRTM_legend.png) 
+Here are the results of ASTER flow accummulation minus SRTM flow accummulation. ![flow](flowdifAminusS.PNG)
+This map shows that there is uncertainty spread through the map where both ASTER and STRM in different locations over and under estimated flow accumumulation in comparison to one another. This is shown in the prevalence of both dark red and dark blue. 
+This zoomed in look at the same area where we were looking at difference in the elevation shows how differences in the elevation sampling produce differences in the flow accumulation ![flowzoom](flowdifferencearea.PNG)
+In this zoom we can also see the error at water bodies where the flow accumulation cannot be accurately sampled because both STRM and ASTER data shows water bodies as flat land. 
+ 
 
 As this anaylsis shows, there are differences in the flow accummulation depending on the data source used. While it looks more dramatic 
 in the DEM data. the flow accummulation difference results show that there will be differences in the final results that can affect 
