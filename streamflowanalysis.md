@@ -77,7 +77,7 @@ a legend to interpret that can be found here ![legend](ASTERNUMfile_legend.png)
 
 One can see using the number file and the legend that most of the data was GDEM V3, but that a large portion also shown in green is SRTM V2 from GDEM V3.
 
-To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DiffMosaicASTERminusSRTM.png) ![Legend](DiffMosaicASTERminusSRTM_legend.png) Areas in darker red and darker blue indicate higher areas of difference. 
+To evaluate how DEM files created from SRTM and ASTER data differ we ran the grid difference tool that can be found under the Grid the calculus tabs in SAGA.I subtracted my ASTER- STRM to see the variance in elevation data between them. The resulting map looks like this ![DEM Difference](DEMasterminusSRTM.PNG) Areas in darker red and darker blue indicate higher areas of difference. Areas where the elevation changes dramatcially such as on steep slopes there is more difference in the elecation data. The area shown here has is one such area: ![uncertainty](areaofuncertainty.PNG)
 
 The same tool can be used to run an anaylsis on outputs of flow accumulation from the SRTM and ASTER data. 
 Here are the results of ASTER flow accummulation minus SRTM flow accummulation ![Flow difference](diffflowaccASTERminusSRTM.png)
