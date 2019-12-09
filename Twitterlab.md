@@ -1,4 +1,4 @@
-First we uploaded the two collections of tweets into a PostGIS database using te "UPLOAD RESULTS TO POSTGIS DATABASE" section from the R code above. We also used the " 
+
 # Twitter Lab
 
 # Introduction: 
@@ -120,3 +120,12 @@ update counties
 set ndti = (tweetscountdorian - tweetscount)/ (tweetscountdorian + tweetscount)
 Where tweetscount > 0 or tweetscountdorian > 0 
 ```
+
+The step is to create some visulizations of the data. 
+For this part of the lab, we used some functions in QGIS and GeoDa. 
+First we connected to our databases in GeoDa. 
+Then we used the Weights Manager tool under Tools and selected create a new weights matrix. 
+Use the geoid as the unique id. Keep threshold distance at default and Create. 
+
+From here we created a local G* cluster map which is located under Space. 
+the variable is doriantweet rate 
