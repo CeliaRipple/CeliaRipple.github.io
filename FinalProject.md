@@ -19,6 +19,8 @@ Then use the create topology function
 ```sql
 SELECT pgr_createTopology('planet_osm_roads', 0.00001, 'way', 'osm_id')
 ```
+This function also creates a new table with just the nodes for the road segments. 
+
 The final step before routing is to create a "cost" column. For this initial analysis I decided to use distance as the cost, but cost could also be time, or other factors. 
 
 Add a column for cost 
@@ -40,4 +42,17 @@ SELECT * FROM pgr_dijkstra(
     directed := false)
 ```
 
-The return from this function gives the route with the 
+The return from this function gives the route by the sequence, the nodes, edges, cost, and aggregated cost which in this example amounts to distance. 
+
+To save this route I created a view called "shortest" 
+then used a join to add this route to the planet_osm_roads layer as "walkingroute." 
+``` sql
+alter table planet_osm_roads add column walkingroute integer;
+update planet_osm_roads
+set walkingroute = edge
+from shortest
+where osm_id = edge
+```
+From here I moved on to visulizing the results in QGIS. I loaded the planet_osm_roads layer into Q along with the OSM standard background map using the QuickMapServices plugin. 
+
+In QGIS I used the select by attribute function where "walkingroute" is not null to select my route on the map. Then I exported my route.  
