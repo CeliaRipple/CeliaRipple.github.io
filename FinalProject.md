@@ -56,3 +56,8 @@ where osm_id = edge
 From here I moved on to visulizing the results in QGIS. I loaded the planet_osm_roads layer into Q along with the OSM standard background map using the QuickMapServices plugin. 
 
 In QGIS I used the select by attribute function where "walkingroute" is not null to select my route on the map. Then I exported my route.  
+
+Insert image of map
+
+To evaluate the walkability of this route I went back into the attribute table of the planet_osm_roads map and looked at the highway field. The "highway" field is used to classify the type of road. Information about the meaning of all the tag can be found here: https://wiki.openstreetmap.org/wiki/Key:highway
+
