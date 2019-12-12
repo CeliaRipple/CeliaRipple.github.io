@@ -61,3 +61,4 @@ Insert image of map
 
 To evaluate the walkability of this route I went back into the attribute table of the planet_osm_roads map and looked at the highway field. The "highway" field is used to classify the type of road. Information about the meaning of all the tag can be found here: https://wiki.openstreetmap.org/wiki/Key:highway
 
+[lefalet](qgis2web_2019_12_11-15_55_59_222336/)
