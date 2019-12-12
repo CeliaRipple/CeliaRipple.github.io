@@ -16,4 +16,4 @@ Hi I'm Celia
 
 [Twitter Lab](Twitterlab.md)
 
-Final Project()
+[Final Project](FinalProject.md)
