@@ -1,0 +1,12 @@
+Create table walkingroute2 as
+SELECT * FROM pgr_dijkstra(
+    'SELECT osm_id AS id, source, target, cost FROM planet_osm_roads',
+    2633, ARRAY[2350,3346,3710],
+    true)
+	
+	alter table planet_osm_roads add column walkingroute2 int
+	
+	update planet_osm_roads 
+set walkingroute2 = edge
+from walkingroute2
+where osm_id = edge
