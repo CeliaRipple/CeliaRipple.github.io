@@ -64,7 +64,7 @@ In QGIS I used the select by attribute function where "walkingroute" is not null
 
 I used leaflet to create a visual of my resulting route. The route itself is about 2 miles. 
 
-[lefalet](qgis2web_2019_12_11-15_55_59_222336/)
+[Penn Musuem to City Hall lefalet](qgis2web_2019_12_11-15_55_59_222336/)
 
 To evaluate the walkability of this route I went back into the attribute table of the planet_osm_roads map and looked at the highway field to determine what types of roads comprises this route. The route is entirely primary and secondary roads. This route is similar to the route a car would take, but for the most walking potential of this route I wanted to see if I could used the planet_osm_lines layer to get a route of comparable length with for a similar distance. 
 
