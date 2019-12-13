@@ -60,7 +60,7 @@ From here I moved on to visulizing the results in QGIS. I loaded the planet_osm_
 
 In QGIS I used the select by attribute function where "walkingroute" is not null to select my route on the map. Then I exported my route and named in "walkingroute" so that it would be a permanent layer. 
 
-I used leaflet to create a visual of my resulting route. 
+I used leaflet to create a visual of my resulting route. The route itself is about 2 miles. 
 
 [lefalet](qgis2web_2019_12_11-15_55_59_222336/)
 
@@ -84,8 +84,14 @@ Roads:
 
 There are areas on the liens map such as the woodlands cemetary where every potential path inlcluding the red doted foot paths are marked with a line:
 ![woodlands](woodlandscemetary.png)
-This level of complexity introduces a lot of potential for error when users draw lines to create the osm map. And areas where the foot path is very close to the "roads" marked by white lines on the image introduce potential error while using the snapping tool to correct the gaps between line segments. These paths are potentially too close not to be snapped together, but if we lower the tolerence to correct for that, we may lose some of the legitimate corrections we need to make the routing function work.
+This level of complexity introduces a lot of potential for error when users draw lines to create the osm map. And areas where the foot path is very close to the "road" marked by white lines on the image introduces potential error while using the snapping tool to correct the gaps between line segments. Paths such as the footpth and road are potentially too close not to be snapped together, but if we lower the tolerence to correct for that, we may lose some of the legitimate corrections we need to make the routing function work. Similarly, areas where a path may intersect a road without actually touching it as in the case of a bridge or tunnel could also cause this error.
 
-Similarly, areas that contain dead end roads or footpaths that do not connect to another path have the potential to disrupt the routing function: 
+In another case, areas that contain dead end roads or footpaths that do not connect to another path have the potential to disrupt the routing function: 
 ![deadends](deadends.png)
-I believe that the dead ends have a potential to stop the routing function from continuing the route if the dead end segment is shorter in legnth than the next segment towards the destination.  
+I believe that the dead ends have a potential to stop the routing function from continuing the route if the dead end segment is shorter in legnth than the next segment towards the destination.
+
+#Conclusion 
+To conclude on the point of error, OSM is an incredible resource for open source data on streets. However, the complexity of the planet_osm_lines layer, the fact that it is put together by a multitude of users, and that the regulation of the data varies heavily based on place and time means that there is a lot more potential for inconsistencies in the data and failure of the pgrouting function. 
+
+Despite the issues that I ran into, I still believe that pgrouting has the potential to improve the walkability of cities. Had this application of pgrouting worked, I would have liked to look at the possiblity of using the planet_osm_lines layer with the k-shortest path function to return mulitple routes for the same start and end points. Then I would have looked at the "highway" types for each route and their distances to determine which was the shortest and most walkable from point A to point B. 
+On a larger scale, k-shortest path function could be used to compare the "walkable" returns with the shortest returns for any two or more points on a map to determine if walkable routes are comparable to shortest routes. Applied to urban planning, this function could be used to suggest plans that connects more pedestrian friendly ways to each other to shorten the walking distance of pedestrian friendly routes.  
