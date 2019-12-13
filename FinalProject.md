@@ -75,7 +75,13 @@ ALTER TABLE planet_osm_line
   USING st_transform(way,2272);
   ```
   Then I loaded the data layer into QGIS and used the "snap to layer" function with a tolerance of 20 feet. The tolerance accounts for the error distance that can exist between lines segments that it will fix. If this number is too high, it will snap together lines that aren't meant to connect such as opposite traffic lanes spilt by a boulevard. However, if this number is too low, it can't fix legitimate gaps, so it is a bit of guessing game. After this step, I also used the check validity function to check if all the geometries on this layer were valid. Those that are not valid can be fixed with the "fix geometries" function. This function should fix geometries that are invalid due to intersections, openings in the polygon, polygons within polygons etc. 
-Snapping and fixing the geometries allowed me to create topology, but when trying to query routes I recieved a FAILED return. I believe this happened due to the complexity of the line paths on the planet_osm_lines layer. 
+Snapping and fixing the geometries allowed me to create topology, but when trying to query routes I recieved a FAILED return. I believe this happened due to the complexity of the line paths on the planet_osm_lines layer compared to that of the planet_osm_roads layer.  
+Lines:
 ![planet_osm_line](planet_osm_line.png)
-There are areas on this map such as the woodlands cemetary where every potential path on through the cemetary is marked with a line:
+Roads: 
+![planet_osm_roads](planet_osm_roads.png)
+
+
+There are areas on the liens map such as the woodlands cemetary where every potential path inlcluding the red doted foot paths are marked with a line:
 ![woodlands](woodlandscemetary.png)
+This level of complexity introduces a lot of potential for error when users draw lines to create the osm map. And areas where the foot path is very close to the "roads" marked by white lines on the image introduce potential error while using the snapping tool to correct the gaps between line segments. These paths are potentially too close not to be snapped together, but if we lower the tolerence to correct for that, we may lose some of the legitimate corrections we need to make the routing function work.  
