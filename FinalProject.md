@@ -13,6 +13,7 @@ First I exported the OSM data on the city of Philadelphia from [Open street map]
 To upload the data into my database I used osm2pgsql which can be found here: https://github.com/openstreetmap/osm2pgsql
 Once the data has been loaded into the database the first step is to prepare the planet_osm_roads layer to be used for routing by creating topology. This step marks the verticies between road segments. These "nodes" will be used to locate the start and end points on roads while routing. 
 
+[full SQL](finalprojectnotes.sql)
 Start by adding columns to the planet_osm_roads layer for the source (start of a segment) and the target (end of a segment).
 ```sql
 Alter table planet_OSM_roads Add column source integer;
