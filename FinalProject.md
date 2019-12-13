@@ -2,12 +2,15 @@
 
 # Introduction 
 
-For my final project I decided to use the pgrouting function of PostGIS along with OSM data to evaluate the "walkability" of routes in Philadelphia. 
-Improving the walkability of cities is a current focus for urban planners. There are some cities in the U.S. that are seen as more walkable than others. With this project I want to look at what makes a city walkable and evaluate if pgrouting can be used as a tool to assess the walkability of routes in a city. 
+For my final project I wanted to use the pgrouting function of PostGIS along with OSM data to evaluate the "walkability" of routes in Philadelphia. 
+Improving the walkability of cities is an interesting topic in urban planning as some U.S. cities  are seen as more walkable than others. With this project I wanted to look at how to find the most "walkable route" between two points using pgrouting and evaluate whether pgrouting is a useful tool for this anaylsis. 
+Challenges: I ran into some challenges along the way with this project. OSM is open source data, so the quality of the data varies from location to location. I found that even within one place the quality of the data can vary. For this project I attempted to use two different layers that show roads/ paths of travel in different levels of detail: planet_osm_roads and planet_osm_lines. Planet_osm_roads includes almost exclusively primary, secondary, and trunk roads meaning that routes returned from this layer would be entirely on major roads that are not necessarily the most "pedestrian friendly." Planet_osm_lines has many more types of roads inlcuding primary, secondary, trunk, residential, paths, and footpaths. Planet_osm_lines has a higher potential to return pedestrian friendly paths, but because the volume of data is much larger there is more potential for inconsistencies in the data that will cause error. I was not able to get a data set error free enough from the planet_osm_lines layer to be able to use for my analysis, so for the following process I mostly used the planet_osm_roads layer.
+
+A full list of the descriptions of OSM road types can be found here: https://wiki.openstreetmap.org/wiki/Key:highway . Road types are classified under the "highway" field. 
 
 # Process
 First I exported the OSM data on the city of Philadelphia from [Open street map](https://www.openstreetmap.org/#map=11/40.0026/-75.2385) 
-The file that I downloaded included a data layer, planet_osm_roads, of the roads in Philadelphia. This is the main layer I worked with in pgrouting. To upload the data into my database I used osm2pgsql which can be found here: https://github.com/openstreetmap/osm2pgsql
+To upload the data into my database I used osm2pgsql which can be found here: https://github.com/openstreetmap/osm2pgsql
 Once the data has been loaded into the database the first step is to prepare the planet_osm_roads layer to be used for routing by creating topology. This step marks the verticies between road segments. These "nodes" will be used to locate the start and end points on roads while routing. 
 
 Start by adding columns to the planet_osm_roads layer for the source (start of a segment) and the target (end of a segment).
@@ -15,13 +18,13 @@ Start by adding columns to the planet_osm_roads layer for the source (start of a
 Alter table planet_OSM_roads Add column source integer;
 Alter table planet_OSM_roads Add column target integer
 ```
-Then use the create topology function 
+Then use the create topology function. The tolerence (I used 0.00001) can be adjusted to account for small gaps inbetween the road segments. 
 ```sql
 SELECT pgr_createTopology('planet_osm_roads', 0.00001, 'way', 'osm_id')
 ```
-This function also creates a new table with just the nodes for the road segments. 
+This function also creates a new table with just the nodes as ponits for the road segments. The nodes show the start and end of every road segment. the node ids are also used to locate the start and end of the routes by lining up the destination with with the node closest. [example of the nodes](nodesexample.png).  
 
-The final step before routing is to create a "cost" column. For this initial analysis I decided to use distance as the cost, but cost could also be time, or other factors. 
+The final step before routing is to create a "cost" column. For this initial analysis I decided to use distance as the cost, but cost could also be traveltime, or other factors. With the routing function I used, there is also the possibility of creating a reverse cost. 
 
 Add a column for cost 
 ``` sql
@@ -55,10 +58,22 @@ where osm_id = edge
 ```
 From here I moved on to visulizing the results in QGIS. I loaded the planet_osm_roads layer into Q along with the OSM standard background map using the QuickMapServices plugin. 
 
-In QGIS I used the select by attribute function where "walkingroute" is not null to select my route on the map. Then I exported my route.  
+In QGIS I used the select by attribute function where "walkingroute" is not null to select my route on the map. Then I exported my route and named in "walkingroute" so that it would be a permanent layer. 
 
-Insert image of map
-
-To evaluate the walkability of this route I went back into the attribute table of the planet_osm_roads map and looked at the highway field. The "highway" field is used to classify the type of road. Information about the meaning of all the tag can be found here: https://wiki.openstreetmap.org/wiki/Key:highway
+I used leaflet to create a visual of my resulting route. 
 
 [lefalet](qgis2web_2019_12_11-15_55_59_222336/)
+
+To evaluate the walkability of this route I went back into the attribute table of the planet_osm_roads map and looked at the highway field to determine what types of roads comprises this route. The route is entirely primary and secondary roads. This route is similar to the route a car would take, but for the most walking potential of this route I wanted to see if I could used the planet_osm_lines layer to get a route of comparable length with for a similar distance. 
+
+Part 2: 
+I attempted to "create topology" on planet_osm_lines just as I had with planet_osm_roads, but because of errors in the data topology couldn't be created without trying to first fix some of those errors. The errors in the data result from gaps between lines when the data was inputed by users, from lines that cross and create false intersections between points, from segments that are not designated an end point. 
+QGIS has a function to "snap" together geometries that may have gaps between them from input errors. To use this function first I had to transform planet_osm_lines into a projected coordinate system. I used NAD 83 state plane Pennsylvania south and used this query to transform: 
+```sql 
+ALTER TABLE planet_osm_line
+ ALTER COLUMN way TYPE geometry(linestring,2272) 
+  USING st_transform(way,2272);
+  ```
+  Then I loaded the data layer into QGIS and used the "snap to layer" function with a tolerance of 20 feet. The tolerance accounts for the error distance that can exist between lines segments that it will fix. If this number is too high, it will snap together lines that aren't meant to connect such as opposite traffic lanes spilt by a boulevard. However, if this number is too low, it can't fix legitimate gaps, so it is a bit of guessing game. After this step, I also used the check validity function to check if all the geometries on this layer were valid. Those that are not valid can be fixed with the "fix geometries" function. This function should fix geometries that are invalid due to intersections, openings in the polygon, polygons within polygons etc. 
+Snapping and fixing the geometries allowed me to create topology, but not to query routes. 
+  
