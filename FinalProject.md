@@ -75,5 +75,7 @@ ALTER TABLE planet_osm_line
   USING st_transform(way,2272);
   ```
   Then I loaded the data layer into QGIS and used the "snap to layer" function with a tolerance of 20 feet. The tolerance accounts for the error distance that can exist between lines segments that it will fix. If this number is too high, it will snap together lines that aren't meant to connect such as opposite traffic lanes spilt by a boulevard. However, if this number is too low, it can't fix legitimate gaps, so it is a bit of guessing game. After this step, I also used the check validity function to check if all the geometries on this layer were valid. Those that are not valid can be fixed with the "fix geometries" function. This function should fix geometries that are invalid due to intersections, openings in the polygon, polygons within polygons etc. 
-Snapping and fixing the geometries allowed me to create topology, but not to query routes. 
-  
+Snapping and fixing the geometries allowed me to create topology, but when trying to query routes I recieved a FAILED return. I believe this happened due to the complexity of the line paths on the planet_osm_lines layer. 
+![planet_osm_line](planet_osm_line.png)
+There are areas on this map such as the woodlands cemetary where every potential path on through the cemetary is marked with a line:
+![woodlands](woodlandscemetary.png)
